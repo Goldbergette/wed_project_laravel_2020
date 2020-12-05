@@ -13,11 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
+});*/
+
+//ROUTE PAR DEFAUT
+
+Route::get('/', function () {
+    return view('template.index');
 });
 
 
+//ROUTE POUR VOYAGER (ADMIN)
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
