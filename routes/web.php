@@ -17,14 +17,18 @@ use Illuminate\Support\Facades\Route;
     return view('welcome');
 });*/
 
-//ROUTE PAR DEFAUT
+//ROUTE PAR DEFAUT ----------------------------------
+use App\Http\Controllers\PostsController;
+Route::get('/', [PostsController::class, 'index']);
 
-Route::get('/', function () {
-    return view('template.index');
-});
+//ROUTE DU DETAIL D'UN POST ---------------------------
 
+Route::get('/{post}/{slug}', [PostsController::class, 'show'])
+                ->where(['post'=> '[1-9][0-9]*',
+                         'slug'=>'[a-z0-9][a-z0-9\-]*'])
+                ->name('posts.show');
 
-//ROUTE POUR VOYAGER (ADMIN)
+//ROUTE POUR VOYAGER (ADMIN) ---------------------------
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
