@@ -3,7 +3,7 @@
 @section('content')
   <div class="single-post">
      <div class="feature-img">
-        <img class="img-fluid" src="assets/img/blog/single_blog_1.png" alt="">
+        <img class="img-fluid" src="{{ asset('assets/img/blog/' .$post->image )}}" alt="">
      </div>
      <div class="blog_details">
         <h2>{{ $post->title }}
@@ -14,19 +14,18 @@
         <p class="excert">
           {{ $post->content }}
         </p>
-        
+
      </div>
   </div>
 
   <div class="blog-author">
      <div class="media align-items-center">
-        <img src="assets/img/blog/author.png" alt="">
+        <img src="{{ asset('assets/img/blog/' .$post->author->avatar )}}" alt="">
         <div class="media-body">
            <a href="#">
-              <h4>Harvard milan</h4>
+              <h4>{{ $post->author->firstname }} {{ $post->author->lastname }}</h4>
            </a>
-           <p>Second divided from form fish beast made. Every of seas all gathered use saying you're, he
-              our dominion twon Second divided from</p>
+           <p>{{ $post->author->biography }}</p>
         </div>
      </div>
   </div>
