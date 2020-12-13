@@ -3,7 +3,7 @@
 @section('content')
   <div class="single-post">
      <div class="feature-img">
-        <img class="img-fluid" src="{{ asset('assets/img/blog/' .$post->image )}}" alt="">
+        <img class="img-fluid" src="{{ asset('storage/' .$post->image )}}" alt="">
      </div>
      <div class="blog_details">
         <h2>{{ $post->title }}
@@ -20,7 +20,7 @@
 
   <div class="blog-author">
      <div class="media align-items-center">
-        <img src="{{ asset('assets/img/blog/' .$post->author->avatar )}}" alt="">
+        <img src="{{ asset('storage/' .$post->author->avatar )}}" alt="">
         <div class="media-body">
            <a href="#">
               <h4>{{ $post->author->firstname }} {{ $post->author->lastname }}</h4>

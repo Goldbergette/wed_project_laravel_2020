@@ -4,10 +4,10 @@
 @foreach($posts as $post)
   <article class="blog_item">
       <div class="blog_item_img">
-          <img class="card-img rounded-0" src="{{ asset('assets/img/blog/' .$post->image )}}" alt="">
+          <img class="card-img rounded-0" src="{{ asset('storage/' .$post->image )}}" alt="">
           <a href="#" class="blog_item_date">
-              <h3>15</h3>
-              <p>Jan</p>
+              <h3>{{ date('d', strtotime($post->created_at))}}</h3>
+              <p>{{ date('M', strtotime($post->created_at))}}</p>
           </a>
       </div>
 
@@ -17,7 +17,9 @@
           </a>
           <p>{{ $post->content }}</p>
           <ul class="blog-info-link">
-              <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
+            @foreach($post->tags as $tag)
+              <li><a href="#"><i class="fa fa-user"></i> {{ $tag->name }}</a></li>
+            @endforeach
           </ul>
       </div>
   </article>
