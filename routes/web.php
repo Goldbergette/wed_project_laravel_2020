@@ -16,6 +16,11 @@ use Illuminate\Support\Facades\Route;
 /*Route::get('/', function () {
     return view('welcome');
 });*/
+//VIEW COMPOSERS-------------------------------------
+View::composer('categories._index', function($view){
+  $view->with('categories', App\Models\Category::orderBy('name', 'asc')
+                                                ->get());
+});
 
 //ROUTE PAR DEFAUT ----------------------------------
 use App\Http\Controllers\PostsController;

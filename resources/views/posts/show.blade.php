@@ -9,7 +9,9 @@
         <h2>{{ $post->title }}
         </h2>
         <ul class="blog-info-link mt-3 mb-4">
-           <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
+          @foreach($post->tags as $tag)
+           <li><a href="#"><i class="fa fa-user"></i> {{ $tag->name }}</a></li>
+         @endforeach
         </ul>
         <p class="excert">
           {{ $post->content }}
