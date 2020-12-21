@@ -22,6 +22,11 @@ View::composer('categories._index', function($view){
                                                 ->get());
 });
 
+View::composer('tags._index', function($view){
+  $view->with('tags', App\Models\Tag::orderBy('name', 'asc')
+                                                ->get());
+});
+
 //ROUTE PAR DEFAUT ----------------------------------
 use App\Http\Controllers\PostsController;
 Route::get('/', [PostsController::class, 'index']);

@@ -13,11 +13,7 @@
                       @yield('content')
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="blog_right_sidebar">
-                      @include('categories._index')
-                    </div>
-                </div>
+                @include('template.partials._aside')
             </div>
         </div>
     </section>
