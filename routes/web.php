@@ -29,7 +29,8 @@ View::composer('tags._index', function($view){
 
 //ROUTE PAR DEFAUT ----------------------------------
 use App\Http\Controllers\PostsController;
-Route::get('/', [PostsController::class, 'index']);
+Route::get('/', [PostsController::class, 'index'])
+                ->name('posts.index');
 
 //ROUTE DU DETAIL D'UN POST ---------------------------
 
@@ -37,6 +38,12 @@ Route::get('/{post}/{slug}', [PostsController::class, 'show'])
                 ->where(['post'=> '[1-9][0-9]*',
                          'slug'=>'[a-z0-9][a-z0-9\-]*'])
                 ->name('posts.show');
+
+//ROUTE DE LA PAGE CONTACT------------------------------
+
+Route::get('/contact_us', function () {
+    return view('template.contact');
+})-> name('contact');
 
 //ROUTE POUR VOYAGER (ADMIN) ---------------------------
 Route::group(['prefix' => 'admin'], function () {

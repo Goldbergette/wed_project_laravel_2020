@@ -5,7 +5,7 @@
 
 <footer>
     <!-- Footer Start-->
-    <div class="footer-main" data-background="assets/img/gallery/section_bg4.png">
+    <div class="footer-main" data-background="{{ asset('assets/img/gallery/section_bg4.png')}}">
         <div class="footer-area footer-padding">
             <div class="container">
                 <div class="row d-flex justify-content-between">
@@ -14,7 +14,7 @@
                             <div class="single-footer-caption mb-30">
                                 <!-- logo -->
                                 <div class="footer-logo">
-                                    <a href="index.html"><img src="assets/img/logo/logo2_footer.png" alt=""></a>
+                                    <a href="index.html"><img src="{{ asset('assets/img/logo/logo2_footer.png')}}" alt=""></a>
                                 </div>
                             </div>
                         </div>

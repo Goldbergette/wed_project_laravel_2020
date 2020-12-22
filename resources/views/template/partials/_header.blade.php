@@ -11,17 +11,14 @@
                         <!-- Logo -->
                         <div class="col-xl-2 col-lg-2">
                             <div class="logo">
-                                <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
+                                <a href="index.html"><img src="{{ asset('assets/img/logo/logo.png')}}" alt=""></a>
                             </div>
                         </div>
                         <div class="col-xl-10 col-lg-10 col-md-10">
                             <!-- Main-menu -->
                             <div class="main-menu f-right d-none d-lg-block">
                                 <nav>
-                                    <ul id="navigation">
-                                        <li><a href="index.html">Blog</a></li>
-                                        <li><a href="contact.html">Contact Us</a></li>
-                                    </ul>
+                                    {{ menu('main') }}
                                 </nav>
                             </div>
                         </div>
