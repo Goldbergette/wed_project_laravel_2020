@@ -19,5 +19,13 @@ public function show(int $id){
     return view('posts.show', compact('post'));
   }
 
+public function ajaxMore(Request $request){
+  $posts=Post::orderBy('created_at', 'DESC')
+              ->take(10)
+              ->offset($request->get('offset'))
+              ->get();
+  return view('posts.ajaxMore', compact('posts'));
+
+}
 
 }

@@ -1,8 +1,8 @@
-@extends('template.index')
-
-@section('content')
+{{--
+./
+--}}
 @foreach($posts as $post)
-  <article class="blog_item">
+<article class="blog_item">
       <div class="blog_item_img">
           <img class="card-img rounded-0" src="{{ asset('storage/' .$post->image )}}" alt="">
           <a href="#" class="blog_item_date">
@@ -22,7 +22,5 @@
             @endforeach
           </ul>
       </div>
-  </article>
+</article>  
 @endforeach
-
-@endsection

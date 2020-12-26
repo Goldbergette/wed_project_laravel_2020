@@ -49,3 +49,7 @@ Route::get('/contact_us', function () {
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+//ROUTE AJAX-------------------------------------------
+Route::get('/ajax/morePosts', [PostsController::class, 'ajaxMore'])
+                ->name('api.posts.ajaxMore');

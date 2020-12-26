@@ -6,7 +6,7 @@
 <head>
  @include('template.partials._head')
 </head>
-<body>
+<body data-baseURL="{{ url('/') }}">
 <!-- Preloader Start -->
  @include('template.partials._preload')
 <!-- Preloader Start-->

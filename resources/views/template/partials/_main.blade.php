@@ -12,6 +12,13 @@
                     <div class="blog_left_sidebar">
                       @yield('content')
                     </div>
+                    <nav class="blog-pagination justify-content-center d-flex">
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a href="#" class="page-link" style="width: auto; padding: 0 1em;">More posts</a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
                 @include('template.partials._aside')
             </div>
