@@ -31,5 +31,6 @@
         </div>
      </div>
   </div>
-
+  @include('template.partials._form')
+  @include('comments.index')
 @endsection

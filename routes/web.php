@@ -19,12 +19,17 @@ use Illuminate\Support\Facades\Route;
 //VIEW COMPOSERS-------------------------------------
 View::composer('categories._index', function($view){
   $view->with('categories', App\Models\Category::orderBy('name', 'asc')
-                                                ->get());
+                                               ->get());
 });
 
 View::composer('tags._index', function($view){
   $view->with('tags', App\Models\Tag::orderBy('name', 'asc')
-                                                ->get());
+                                    ->get());
+});
+
+View::composer('comments.index', function($view){
+  $view->with('comments', App\Models\Comment::orderBy('created_at', 'desc')
+                                            ->get());
 });
 
 //ROUTE PAR DEFAUT ----------------------------------
