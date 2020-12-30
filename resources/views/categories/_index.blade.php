@@ -12,7 +12,7 @@
         <li>
             <a href="#" class="d-flex">
                 <p>{{ $categorie->name }}</p>
-                <p>(37)</p>
+                <p>({{ count($categorie->posts)}})</p>
             </a>
         </li>
       @endforeach

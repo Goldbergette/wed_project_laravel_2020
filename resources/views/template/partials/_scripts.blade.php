@@ -36,3 +36,4 @@
 <script src="{{ asset('assets/js/main.js')}}"></script>
 
 <script src="{{ asset('assets/js/app.js')}}"></script>
+<script src="{{ asset('assets/js/comment.js')}}"></script>

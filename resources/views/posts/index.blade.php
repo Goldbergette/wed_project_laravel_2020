@@ -17,7 +17,7 @@
           <a class="d-inline-block" href="{{ route('posts.show', ['post' => $post->id, 'slug' => Str::slug($post->title, '-')]) }}">
               <h2>{{ $post->title }}</h2>
           </a>
-          <p>{{ $post->content }}</p>
+          <p>{!! $post->content !!}</p>
           <ul class="blog-info-link">
             @foreach($post->tags as $tag)
               <li><a href="#"><i class="fa fa-user"></i> {{ $tag->name }}</a></li>

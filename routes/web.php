@@ -27,7 +27,7 @@ View::composer('tags._index', function($view){
                                     ->get());
 });
 
-View::composer('comments.index', function($view){
+View::composer('comments._index', function($view){
   $view->with('comments', App\Models\Comment::orderBy('created_at', 'desc')
                                             ->get());
 });
@@ -58,3 +58,8 @@ Route::group(['prefix' => 'admin'], function () {
 //ROUTE AJAX-------------------------------------------
 Route::get('/ajax/morePosts', [PostsController::class, 'ajaxMore'])
                 ->name('api.posts.ajaxMore');
+
+
+use App\Http\Controllers\CommentsController;
+Route::get('/ajax/store', [CommentsController::class, 'store'])
+               ->name('api.commentaires.store');

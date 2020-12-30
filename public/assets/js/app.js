@@ -1,18 +1,7 @@
-const linkMore = document.querySelector('.page-link');
-
-/*linkMore.onclick = function(){
-  fetch('traitement.php')
-    .then(function(reponsePHP){
-      return reponsePHP.text();
-    })
-    .then(function(reponse){
-      alert(reponse);
-    });
-};*/
-
+  const baseUrl = $('body').attr('data-baseURL');
 $(function(){
   let offsetCalc = 10;
-  const baseUrl = $('body').attr('data-baseURL');
+
 
   $('.page-link').click(function(e){
     e.preventDefault();

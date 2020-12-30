@@ -21,6 +21,6 @@ class Post extends Model
     }
 
     public function comments(){
-      return $this->belongsToMany('App\Models\Comment', 'posts_has_commments');
+      return $this->belongsTo('App\Models\Comment');
     }
 }

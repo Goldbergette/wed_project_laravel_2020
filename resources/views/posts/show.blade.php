@@ -14,7 +14,7 @@
          @endforeach
         </ul>
         <p class="excert">
-          {{ $post->content }}
+          {!! $post->content !!}
         </p>
 
      </div>
@@ -32,5 +32,5 @@
      </div>
   </div>
   @include('template.partials._form')
-  @include('comments.index')
+  {{--@include('comments._index')--}}
 @endsection

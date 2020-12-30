@@ -25,7 +25,3 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 //PATTERN: api/store
 //CTRL: CommentsController
 //ACTION: store
-
-use App\Http\Controllers\CommentsController;
-Route::post('commentaires/store', [CommentsController::class, 'store'])
-->name('api.commentaires.store');
