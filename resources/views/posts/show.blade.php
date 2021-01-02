@@ -1,7 +1,7 @@
 @extends('template.index')
 
 @section('content')
-  <div class="single-post">
+  <div class="single-post" data-id={{ $post->id }}>
      <div class="feature-img">
         <img class="img-fluid" src="{{ asset('storage/' .$post->image )}}" alt="">
      </div>
@@ -19,7 +19,7 @@
 
      </div>
   </div>
-
+</br>
   <div class="blog-author">
      <div class="media align-items-center">
         <img src="{{ asset('storage/' .$post->author->avatar )}}" alt="">
@@ -32,5 +32,15 @@
      </div>
   </div>
   @include('template.partials._form')
-  {{--@include('comments._index')--}}
+</br>
+<h4>Liste des commentaires de ce post({{ count($post->comments) }})</h4>
+
+<ul class="list-group">
+  @foreach($post->comments as $comment)
+
+        @include('comments._show')
+
+
+@endforeach
+</ul>
 @endsection

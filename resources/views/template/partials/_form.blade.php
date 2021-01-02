@@ -1,18 +1,22 @@
+{{--
+./resources/views/template/partials/_form.blade.php
+--}}
 
+</br>
 <div>
   <h4>Votre commentaire</h4>
-  <form id="form_comments" class="card-panel">
+  <form id="form_comments" class="row g-3">
     @csrf
-      <div class="input-field"><label for="pseudo">Votre pseudo</label>
-           <input type="text" id="pseudo" name="pseudo" class="validate" required="required" />
+      <div class="col-md-6"><label for="pseudo" class="form-label">Votre pseudo</label>
+           <input type="text" id="pseudo" name="pseudo" class="form-control" required="required" />
 
       </div>
-      <div class="input-field">
-          <label for="commentaire">Votre commentaire</label>
-           <textarea id="commentaire" name="texte" class="materialize-textarea validate" required="required"></textarea>
+      <div class="col-12">
+          <label for="commentaire" class="form-label">Votre commentaire</label>
+           <textarea id="commentaire" name="texte" class="form-control" required="required"></textarea>
 
       </div>
-      <div><button id="button" class="btn waves-effect waves-light" type="submit">Envoyer
+      <div class="col-12"><button id="button" class="btn waves-effect waves-light" type="submit">Envoyer
 
            </button>
       </div>

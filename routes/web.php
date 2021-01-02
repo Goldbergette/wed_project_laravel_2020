@@ -27,10 +27,10 @@ View::composer('tags._index', function($view){
                                     ->get());
 });
 
-View::composer('comments._index', function($view){
+/*View::composer('comments._index', function($view){
   $view->with('comments', App\Models\Comment::orderBy('created_at', 'desc')
                                             ->get());
-});
+});*/
 
 //ROUTE PAR DEFAUT ----------------------------------
 use App\Http\Controllers\PostsController;
