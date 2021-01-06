@@ -1,5 +1,5 @@
 {{--
-./resources/views/template/partials/_header.blade.php
+./resources/views/template/partials/_main.blade.php
 --}}
 
 
@@ -11,7 +11,7 @@
                 <div class="col-lg-8 mb-5 mb-lg-0">
 
                       @yield('content')
-                    
+
 
                 </div>
                 @include('template.partials._aside')

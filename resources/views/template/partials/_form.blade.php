@@ -5,7 +5,7 @@
 </br>
 <div>
   <h4>Votre commentaire</h4>
-  <form id="form_comments" class="row g-3">
+  <form id="form_comments" class="row g-3" data-route="{{ route('api.commentaires.store')}}">
     @csrf
       <div class="col-md-6"><label for="pseudo" class="form-label">Votre pseudo</label>
            <input type="text" id="pseudo" name="pseudo" class="form-control" required="required" />

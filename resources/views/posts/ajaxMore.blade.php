@@ -1,5 +1,7 @@
 {{--
-./
+./resources/views/posts/ajaxMore.blade.@php
+  Variables disponibles:
+  $posts ARRAY(OBJ(id, title, content, image, created_at, tags ARRAY(OBJ Tag)))
 --}}
 @foreach($posts as $post)
 <article class="blog_item">
@@ -22,5 +24,5 @@
             @endforeach
           </ul>
       </div>
-</article>  
+</article>
 @endforeach

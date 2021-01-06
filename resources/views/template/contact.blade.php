@@ -1,3 +1,7 @@
+{{--
+./resources/views/template/contact.blade.php
+--}}
+
 @extends('template.index')
 @section('content')
   <div class="d-none d-sm-block mb-5 pb-4">

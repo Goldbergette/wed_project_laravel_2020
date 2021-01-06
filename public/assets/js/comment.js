@@ -3,7 +3,7 @@ $(function(){
     e.preventDefault();
 
     $.ajax({
-      url:baseUrl + '/ajax/store',
+      url: this.dataset.route,
       data: {
         post_id: $('.single-post').attr('data-id'),
         pseudo: $('#pseudo').val(),

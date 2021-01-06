@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 /*Route::get('/', function () {
     return view('welcome');
 });*/
+
+
 //VIEW COMPOSERS-------------------------------------
 View::composer('categories._index', function($view){
   $view->with('categories', App\Models\Category::orderBy('name', 'asc')
@@ -27,39 +29,32 @@ View::composer('tags._index', function($view){
                                     ->get());
 });
 
-/*View::composer('comments._index', function($view){
-  $view->with('comments', App\Models\Comment::orderBy('created_at', 'desc')
-                                            ->get());
-});*/
 
 //ROUTE PAR DEFAUT ----------------------------------
+//PATTERN: /
+//CTRL: PostsController
 use App\Http\Controllers\PostsController;
 Route::get('/', [PostsController::class, 'index'])
                 ->name('posts.index');
 
-//ROUTE DU DETAIL D'UN POST ---------------------------
 
+//ROUTE DU DETAIL D'UN POST ---------------------------
+//PATTERN: /post/id/slug
+//CTRL: PostsController
 Route::get('/{post}/{slug}', [PostsController::class, 'show'])
                 ->where(['post'=> '[1-9][0-9]*',
                          'slug'=>'[a-z0-9][a-z0-9\-]*'])
                 ->name('posts.show');
 
-//ROUTE DE LA PAGE CONTACT------------------------------
 
+//ROUTE DE LA PAGE CONTACT------------------------------
+//PATTERN: /contact_us
 Route::get('/contact_us', function () {
     return view('template.contact');
 })-> name('contact');
+
 
 //ROUTE POUR VOYAGER (ADMIN) ---------------------------
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
-
-//ROUTE AJAX-------------------------------------------
-Route::get('/ajax/morePosts', [PostsController::class, 'ajaxMore'])
-                ->name('api.posts.ajaxMore');
-
-
-use App\Http\Controllers\CommentsController;
-Route::get('/ajax/store', [CommentsController::class, 'store'])
-               ->name('api.commentaires.store');

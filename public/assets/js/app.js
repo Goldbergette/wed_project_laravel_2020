@@ -6,7 +6,7 @@ $(function(){
   $('.page-link').click(function(e){
     e.preventDefault();
     $.ajax({
-      url:baseUrl + '/ajax/morePosts',
+      url: this.dataset.route,
       data:{
         offset: offsetCalc
       },

@@ -1,3 +1,9 @@
+{{--
+./resources/views/posts/index.blade.@php
+  Variables disponibles:
+  $post ARRAY(OBJ(id, title, content, image, created_at, tags ARRAY(OBJ Tag)))
+--}}
+
 @extends('template.index')
 
 @section('content')

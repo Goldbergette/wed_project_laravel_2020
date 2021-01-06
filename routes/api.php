@@ -20,8 +20,17 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+//ROUTE AJAX-------------------------------------------
+//MORE POSTS
+//PATTERN: api/ajaxMore
+//CTRL: PostsController
+use App\Http\Controllers\PostsController;
+Route::get('/ajax/morePosts', [PostsController::class, 'ajaxMore'])
+                ->name('api.posts.ajaxMore');
 
 //AJOUT D'UN COMMENTAIRE
 //PATTERN: api/store
 //CTRL: CommentsController
-//ACTION: store
+use App\Http\Controllers\CommentsController;
+Route::get('/ajax/store', [CommentsController::class, 'store'])
+               ->name('api.commentaires.store');
